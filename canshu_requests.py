@@ -29,7 +29,6 @@ def HQtokenAlogin_ticket(x,y):
 
     response = requests.post(url, headers=headers, json=json_data)
     data = response.text
-    print(data)
     parsed_data = json.loads(data)
     token = parsed_data['data']['token']['token']
     mid = parsed_data['data']['user_info']['mid']
@@ -53,7 +52,6 @@ def HQcookie_token(token,mid):
         'x-rpc-sdk_version': '2.20.2',
         'x-rpc-lifecycle_id': '944d2d5e-a3f8-4bf3-ac39-53acac38b4ee',
         'x-rpc-account_version': '2.20.2',
-        'DS': '1712824512,BDzaRX.66270ffdf1566ca4ae888302a298cd59',
         'Cookie': 'stoken=' + token + ';mid=' + mid,
         'Content-Type': 'application/json',
         'Host': 'passport-api.mihoyo.com',
