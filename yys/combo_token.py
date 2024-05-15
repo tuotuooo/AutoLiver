@@ -51,7 +51,7 @@ def main():
     ltoken_v2 = config['cs']['ltoken_v2']
     cookie_token = config['cs']['cookie_token']
     ltoken = config['cs']['ltoken']
-    mid = config['yx']['mid']
+    mid = config['cs']['account_mid_v2']
     uid = config['yx']['uid']
     y = 'combo_token'
     x = login(uni_web_token, cookie_token_v2, mid, uid, ltoken_v2, cookie_token, ltoken)
