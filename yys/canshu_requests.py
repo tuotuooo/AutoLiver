@@ -32,7 +32,7 @@ def login(x,y):
 
     response = requests.post(url, headers=headers, json=data)
     data = response.headers['Set-Cookie']
-    canshu = ['uni_web_token', 'cookie_token_v2', 'ltoken_v2', 'cookie_token', 'ltoken']
+    canshu = ['uni_web_token', 'cookie_token_v2', 'ltoken_v2', 'cookie_token', 'ltoken','account_mid_v2']
     cfg = {}
     for key in canshu:
         match = re.search(rf'{key}=([^;]+)', data)
