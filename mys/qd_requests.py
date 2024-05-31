@@ -30,7 +30,7 @@ def main():
     region = sys.argv[3]
     dh = sys.argv[4]
     config = configparser.ConfigParser()
-    config.read('canshu.cfg')
+    config.read('canshu.cfg',encoding='utf-8')
     login_ticket = config['cs']['login_ticket']
     ltoken = config['cs']['ltoken']
     cookie_token = config['cs']['cookie_token']
