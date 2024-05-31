@@ -73,7 +73,7 @@ def HQcookie_token(token,mid):
 def main():
     canshu = {}
     config = configparser.ConfigParser()
-    config.read('canshu.cfg')
+    config.read('canshu.cfg',encoding='utf-8')
     account = config['credentials']['account']
     password = config['credentials']['password']
     q = HQtokenAlogin_ticket(account,password)
