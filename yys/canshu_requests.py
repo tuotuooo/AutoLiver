@@ -42,7 +42,7 @@ def login(x,y):
 
 def main():
     config = configparser.ConfigParser()
-    config.read('cnm.cfg')
+    config.read('cnm.cfg',encoding='utf-8')
     account = config['credentials']['account']
     password = config['credentials']['password']
     q = login(account, password)
