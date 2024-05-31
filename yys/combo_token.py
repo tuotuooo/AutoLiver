@@ -45,7 +45,7 @@ def login(uni_web_token,cookie_token_v2,mid,uid,ltoken_v2,cookie_token,ltoken):
 
 def main():
     config = configparser.ConfigParser()
-    config.read('cnm.cfg')
+    config.read('cnm.cfg',encoding='utf-8')
     uni_web_token = config['cs']['uni_web_token']
     cookie_token_v2 = config['cs']['cookie_token_v2']
     ltoken_v2 = config['cs']['ltoken_v2']
