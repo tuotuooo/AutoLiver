@@ -24,7 +24,7 @@ def request(uid,x,y):
 
 def main():
     config = configparser.ConfigParser()
-    config.read('cnm.cfg')
+    config.read('cnm.cfg',encoding='utf-8')
     x = config['cs']['combo_token']
     uid = config['yx']['uid']
     y = generate_hmac_sha256(x,uid)
