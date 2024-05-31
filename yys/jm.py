@@ -28,7 +28,7 @@ def jm(z,m):
 def main():
     canshu = {}
     config = configparser.ConfigParser()
-    config.read('cnm.cfg')
+    config.read('cnm.cfg',encoding='utf-8')
     z = config['mw']['account']
     m = config['mw']['password']
     canshu['account'] = jm(z,m)[0]
