@@ -40,5 +40,5 @@ def main():
     wdsjb()
 if __name__ == "__main__":
     config = configparser.ConfigParser()
-    config.read('canshu.cfg')
+    config.read('canshu.cfg',encoding='utf-8')
     main()
