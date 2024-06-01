@@ -17,3 +17,5 @@
 | UUID | 1and2 |🔓️绕过 |
 
 > 绕过方法：登录`https://user.mihoyo.com/#/login/captcha`关闭在新设备登录时需短信验证功能
+
+## 致谢
