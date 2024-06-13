@@ -6,6 +6,12 @@ import time
 import hmac
 import configparser
 
+'''
+copy HaneRo大佬的代码并略加修改( •̀ ω •́ )y
+
+https://github.com/HaneRo/skland_arknights_checkin
+'''
+
 config = configparser.ConfigParser()
 config.read('skd.cfg', encoding='utf-8')
 content = config['c']['content']
