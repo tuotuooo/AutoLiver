@@ -8,7 +8,7 @@ n = config['key']['n']
 e = config['key']['e']
 
 modulus = int(n, 16)
-public_exponent = int(e)
+public_exponent = int(e, 16)
 
 public_key = rsa.RSAPublicNumbers(public_exponent, modulus).public_key()
 
