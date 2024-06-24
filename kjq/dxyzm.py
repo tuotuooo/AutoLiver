@@ -226,7 +226,7 @@ def last(phone, captcha_id, captcha_output, lot_number, gen_time, pass_token):
         })
         }
     response = requests.post(url, headers=headers, data=data)
-    return print(f"{response.text}\n快看看你的短信叭")
+    return print(f"{response.text}")
 
 def main():
     config = configparser.ConfigParser()
