@@ -1,6 +1,7 @@
 import configparser
 import requests
 import datetime
+import sys
 
 def eee(gameId, serverId, roleId, userId, reqMonth, token):
     url = "https://api.kurobbs.com/encourage/signIn/v2"
@@ -32,15 +33,15 @@ def eee(gameId, serverId, roleId, userId, reqMonth, token):
     return response.text
 
 def main():
+    gameId = sys.argv[1]
+    serverId = sys.argv[2]
+    roleId = sys.argv[3]
     now = datetime.datetime.now()
     month = str(now.month).zfill(2)
     config = configparser.ConfigParser()
     config.read('kjq.cfg', encoding='utf-8')
     userId = config['user']['kjq_userId']
-    gameId = config['zs']['gameId']
-    roleId = config['zs']['roleId']
     token = config['user']['token']
-    serverId = config['zs']['serverId']
     fdsf = eee(gameId, serverId, roleId, userId, month, token)
     print(fdsf)
 if __name__ == '__main__':
