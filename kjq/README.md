@@ -8,5 +8,5 @@
 | phone_login.py | 获取app-token |Ⅲ|
 | kjq.cfg | 配置文件 |Ⅳ|
 | login.py | 获取web-token |Ⅴ|
-
+| zsqd.py | 战双签到 |Ⅵ|
 > 🤔虽然web和手机app登录的接口不同，但是据我猜测做认证的是`同一台服务器同一套程序`，这个留给大家有兴趣去测一下告诉我呗。
