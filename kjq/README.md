@@ -1,18 +1,6 @@
 > [!tip]
 > ☑️极验第四代-滑块验证码
 
-> [!note]
-> test
-
-> [!Important]
-> test
-
-> [!warning]
-> test
-
-> [!caution]
-> test
-
 | 文件名 | 介绍 |编号|
 |:------:|:------:|:------:|
 | rsa.py | 生成RSA公钥pem格式 |Ⅰ|
