@@ -13,6 +13,7 @@ from cryptography.hazmat.primitives.asymmetric import padding
 import configparser
 import binascii
 
+# 获取发送滑块验证码所需的参数
 def erf():
     headers = {
         "Referer": "https://www.kurobbs.com/",
@@ -25,7 +26,8 @@ def erf():
     response = requests.get(url, headers=headers, params=params)
     data = response.text
     return data
-
+    
+# 筛选参数
 def split_string(data):
     length = len(data)
     middle = length // 2
@@ -52,6 +54,7 @@ def split_string(data):
 
     return lot_number, slice_image, bg_image, payload, process_token
 
+# 生成随机数
 def generate_random_string():
     randomStr = ''
     for i in range(4):
@@ -59,7 +62,8 @@ def generate_random_string():
         hex_string = hex(random_number)[3:]
         randomStr += hex_string
     return randomStr
-
+    
+# 对生成的用户操作信息进行AES加密
 def aesooo(qq, ww, ee, rr, tt, yy, sjs):
     data = {
         "setLeft": qq,
@@ -92,6 +96,7 @@ def aesooo(qq, ww, ee, rr, tt, yy, sjs):
     ciphertext = cipher.encrypt(padded_data)
     return ciphertext.hex()
 
+# 生成用户操作信息
 async def huakuai(url1,url2):
     def generate_distance(slice_url, bg_url):
         slide = DdddOcr(det=False, ocr=False, show_ad=False)
@@ -121,6 +126,7 @@ async def huakuai(url1,url2):
     tracks, total_time = generate_track(distance)
     return distance, total_time, distance / (0.8876 * 340 / 300)
 
+# RSA加密AES的密钥
 async def rsaooo(z):
     with open("1.pem", "rb") as key_file:
         pem_public_key = key_file.read()
@@ -133,6 +139,7 @@ async def rsaooo(z):
     hex_encoded = binascii.hexlify(ciphertext)
     return hex_encoded.decode('utf-8')
 
+# 生成pow_msg  作为AES加密的原始材料
 async def aes_time(x, u):
     offset = timedelta(hours=8)
     utc_8 = timezone(offset)
@@ -147,6 +154,7 @@ async def aes_time(x, u):
 
     return pow_msg, encrypted_string
 
+# 拼接参数 异步控制函数
 async def e(lot_number, slice_image, bg_image, captcha_id):
     url_a = 'https://static.geetest.com/'
     url_b = f'{url_a}{slice_image}'
@@ -159,6 +167,7 @@ async def e(lot_number, slice_image, bg_image, captcha_id):
     wer = x + y
     return wer
 
+# 发送滑块验证码验证请求
 def veve(vc, vx, vm):
     headers = {
         "Host": "gcaptcha4.geetest.com",
@@ -175,6 +184,7 @@ def veve(vc, vx, vm):
     data = response.text
     return data
 
+# 筛选参数
 def veve_d(data):
     length = len(data)
     middle = length // 2
@@ -195,6 +205,7 @@ def veve_d(data):
 
     return captcha_output, gen_time, pass_token
 
+# 发送登录请求
 def last(phone, captcha_id, captcha_output, lot_number, gen_time, pass_token):
     url = 'https://api.kurobbs.com/user/getSmsCodeForH5'
     headers = {
