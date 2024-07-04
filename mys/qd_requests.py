@@ -29,13 +29,13 @@ def main():
     hdid = sys.argv[2]
     region = sys.argv[3]
     dh = sys.argv[4]
+    url = sys.argv[5]
     config = configparser.ConfigParser()
     config.read('canshu.cfg',encoding='utf-8')
     login_ticket = config['cs']['login_ticket']
     ltoken = config['cs']['ltoken']
     cookie_token = config['cs']['cookie_token']
     mys_id = config['yx']['mys_id']
-    url = config['api']['url']
 
     headers = {
         'x-rpc-signgame': dh,
