@@ -12,7 +12,6 @@ def e(x,y):
     data = {
         'phone': x,
         'password': y
-        # 可能还需要其他字段，根据接口文档来填写
     }
 
     response = requests.post(url, headers=headers, json=data)
