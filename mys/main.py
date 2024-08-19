@@ -37,7 +37,7 @@ def jql():
     arg1 = config['yx']['zzz_uid']
     arg2 = config['yx']['zzz-hdid']
     arg3 = config['yx']['zzz-region']
-    arg4 = ""
+    arg4 = config['yx']['dh-zzz']
     arg5 = config['api']['url-zzz']
     subprocess.call(["python", "qd_requests.py", arg1, arg2,arg3,arg4,arg5])
 
