@@ -17,7 +17,8 @@ def eee(phone, code, hex_string):
         "channelid": "2",
         "content-type": "application/x-www-form-urlencoded",
         "accept-encoding": "gzip",
-        "user-agent": "okhttp/3.11.0"
+        "user-agent": "okhttp/3.11.0",
+        "devcode": hex_string
     }
     data = {
         "mobile": phone,
