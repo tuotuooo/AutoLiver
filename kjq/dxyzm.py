@@ -13,6 +13,8 @@ from cryptography.hazmat.primitives.asymmetric import padding
 import configparser
 import binascii
 
+# 过极验第四代-滑块验证码
+
 # 获取发送滑块验证码所需的参数
 def erf():
     headers = {
