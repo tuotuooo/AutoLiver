@@ -3,7 +3,7 @@
 > 
 > It is prohibited to use this project for illegal activities.
 
-## 🏪项目介绍
+## 🏪Introduction
 致"肝疼"的朋友🍻
 
 To friends with liver pain🍻
@@ -14,7 +14,7 @@ To friends with liver pain🍻
 
 The user identity is authenticated using account + password or account + SMS verification code, restoring the normal login method to make the operation more convenient and more appropriate.
 
-## 🏗️护肝宝典
+## 🏗️Function
 - [x] 1. 米游社-游戏（原神、星穹轨道、崩坏3、未定事件薄、绝区零）-每日签到奖励
 - [x] 2. 云原神-游玩时长-每日签到奖励 [操作演示](https://www.bilibili.com/video/BV1NNbCehEvj/)
 - [x] 3. ~~森空岛-游戏（明日方舟）-每日签到奖励~~`作者已不具备维护能力（apk逆向还没弄明白），请移步其他大佬`
