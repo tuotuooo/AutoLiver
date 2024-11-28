@@ -16,8 +16,8 @@ The user identity is authenticated using account + password or account + SMS ver
 
 ## 🏗️Function
 - [x] 1. 米游社-游戏（原神、星穹轨道、崩坏3、未定事件薄、绝区零）-每日签到奖励
-- [x] 2. 云原神-游玩时长-每日签到奖励 [操作演示](https://www.bilibili.com/video/BV1NNbCehEvj/)
-- [x] 3. ~~森空岛-游戏（明日方舟）-每日签到奖励~~`作者已不具备维护能力（apk逆向还没弄明白），请移步其他大佬`
+- [x] 2. 云原神-游玩时长-每日签到奖励 
+
 - [x] 4. 库街区-游戏（鸣潮、战双帕弥什）-每日签到奖励
 
 ## ☠️BUG
