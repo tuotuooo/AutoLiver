@@ -19,7 +19,7 @@ The user identity is authenticated using account + password or account + SMS ver
 - [x] 2. 云原神-游玩时长-每日签到奖励 
 
 - [x] 4. 库街区-游戏（鸣潮、战双帕弥什）-每日签到奖励
-- [] 5. 网易大神-游戏-每日签到奖励
+- [ ] 5. 网易大神-游戏-每日签到奖励
 ## ☠️BUG
 > `X-Rpc-Device_id`
 
