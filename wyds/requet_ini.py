@@ -33,7 +33,7 @@ def main():
     config.read('canshu.cfg',encoding='utf-8')
     account = config['ini']['requestone']
     url = config['ini']['url']
-    result = subprocess.run(['node', './js/jm.js', str(account)], capture_output=True, text=True)
+    result = subprocess.run(['node', 'sm4jm.js', str(account)], capture_output=True, text=True)
     output = result.stdout
     www = requesturl(url, output)
     www = json.loads(www)
