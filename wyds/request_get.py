@@ -39,7 +39,7 @@ def main():
     config = configparser.ConfigParser()
     config.read('canshu.cfg', encoding='utf-8')
     account = config['ini']['capid']
-    result = subprocess.run(['node', './js/1111.js'], capture_output=True, text=True).stdout.strip()
+    result = subprocess.run(['node', 'cb.js'], capture_output=True, text=True).stdout.strip()
     www = requesturl(result, account)
     www = json.loads(www)
     combo_token = www['data']['token']
