@@ -27,3 +27,4 @@ The user identity is authenticated using account + password or account + SMS ver
 
 > 绕过方法：登录`https://user.mihoyo.com/#/login/captcha`关闭`在新设备登录时需短信验证`功能
 
+<!-- 1736731062485 --> 
