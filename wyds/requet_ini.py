@@ -3,7 +3,7 @@ import json
 import configparser
 import subprocess
 
-def requesturl(x, y):
+def requesturl(y):
     url = 'https://dl.reg.163.com/dl/wxdl/yd/ini'
 
     data = {
