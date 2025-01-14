@@ -42,6 +42,7 @@ def main():
     result = subprocess.run(['node', 'cb.js'], capture_output=True, text=True).stdout.strip()
     www = requesturl(result, account)
     www = json.loads(www)
+    print(www)
     combo_token = www['data']['token']
     config.set('get', 'token', combo_token)
     with open('canshu.cfg', 'w') as configfile:

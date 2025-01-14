@@ -146,7 +146,7 @@ function sm4Encrypt(e) {
     }
 
 const jsonString = process.argv[2];
-// var jsonString = '{"pd":"godlike_wyds_xcx","pkid":"VYoLaWc","pkht":"ds.163.com","channel":102,"version":"wx1.3.3"}';
+//var jsonString = '{"pd":"godlike_wyds_xcx","pkid":"VYoLaWc","pkht":"ds.163.com","channel":102,"id":"79F99E134C55AD10DDB46E9A9C98BAAFC08E2790D34B1CC7BE360B76800E13A54DA82975177DD53F2BE536734B003B1176182B1CE9404C019E5382753F21E98068FC008E16E2FFAAECFA39868F9C639C140C5D0EE0985303D2DD0BF4A83856AE93901AF134F5CAFC94AE5B5C99F7EE6C","cap":"CN31_q9ezSKGx_2qF0YAbqfd1_CfyaQHsvIB_mXHQ.ggBpTX0T41ndl6DxdhKEPboz7XC1KAntQZJqbfSliOUecRx4G1hkkb44S.TqJ4SkFZBM9wZy6VJu9bSr01JIprgUnYvOh.6oVbjdY8b8xorRJeiR8SRJX8cyuBhWp0DzchYUVIYEKAf15-L1r.BKNx_bWaF40Z7BihpC6ok_-55UxGB.ns7PGPUxkl8E_HhSojw0SzLVgdokM-9Du5.JX.igH0I","un":"13122546736"}'
 var _sm4pubkey = "BC60B8B9E4FFEFFA219E5AD77F11F9E2";
 var u = 0
     , d = 16

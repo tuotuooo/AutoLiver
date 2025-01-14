@@ -36,6 +36,7 @@ def main():
     output = result.stdout
     www = requesturl(output)
     www = json.loads(www)
+    print(www)
     combo_token = www['id']
     combo_token1 = www['capId']
     config.set('ini', 'id', combo_token)

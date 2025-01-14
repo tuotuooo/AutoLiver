@@ -6,9 +6,9 @@ import subprocess
 def requesturl(y):
     url = 'https://dl.reg.163.com/dl/wxdl/yd/vfscp'
 
-    data = {
+    data = json.dumps({
         'encParams': y
-    }
+    })
 
     headers = {
         'Accept': '*/*',
@@ -25,7 +25,7 @@ def requesturl(y):
         'xweb_xhr': '1'
     }
 
-    response = requests.post(url, headers=headers, data=json.dumps(data))
+    response = requests.post(url, headers=headers, data=data)
     return response.text
 
 def main():
@@ -34,13 +34,12 @@ def main():
     id = config['ini']['id']
     cap = config['check']['validate']
     ppp = config['phone']['num']
+    result = subprocess.run(['node', 'CN31_.js', str(cap)], capture_output=True, text=True)
+    cap = result.stdout.replace("\n", "")
     xxx = '{"pd":"godlike_wyds_xcx","pkid":"VYoLaWc","pkht":"ds.163.com","channel":102,"id":"' +id+'","cap":"'+cap+'","un":"'+ppp+'"}'
     result = subprocess.run(['node', 'sm4jm.js', str(xxx)], capture_output=True, text=True)
-    output = result.stdout
-    # print(output)
-    www = requesturl(output)
-    www = json.loads(www)
-    print(www)
+    output = result.stdout.replace("\n", "")
+    print(requesturl(output))
 
 if __name__ == "__main__":
     main()

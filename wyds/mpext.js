@@ -324,7 +324,7 @@ function ext() {
 function getRandomIntegerInRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-var randomInteger = getRandomIntegerInRange(12000, 14000);
+var randomInteger = getRandomIntegerInRange(5000, 6000);
 const token = process.argv[2];
 // var token = "07d7d9c7c598456ee29c9e6845f433c6";
 function main(){
