@@ -47,11 +47,11 @@ def main():
     data11 = {"d":"","m":result[1],"p":result[2],"ext":result[3]}
     www = requesturl(account, result1, result[0], data11)
     www = json.loads(www)
-    print(www)
-    # combo_token = www['data']['token']
-    # config.set('get', 'token', combo_token)
-    # with open('canshu.cfg', 'w') as configfile:
-    #     config.write(configfile)
+    # print(www)
+    combo_token = www['data']['validate']
+    config.set('check', 'validate', combo_token)
+    with open('canshu.cfg', 'w') as configfile:
+        config.write(configfile)
 
 if __name__ == "__main__":
     main()
