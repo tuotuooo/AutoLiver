@@ -4,7 +4,7 @@ import configparser
 import subprocess
 
 def requesturl(x, y):
-    url = x
+    url = 'https://dl.reg.163.com/dl/wxdl/yd/ini'
 
     data = {
         'encParams': y
@@ -32,10 +32,9 @@ def main():
     config = configparser.ConfigParser()
     config.read('canshu.cfg',encoding='utf-8')
     account = config['ini']['requestone']
-    url = config['ini']['url']
     result = subprocess.run(['node', 'sm4jm.js', str(account)], capture_output=True, text=True)
     output = result.stdout
-    www = requesturl(url, output)
+    www = requesturl(output)
     www = json.loads(www)
     combo_token = www['id']
     combo_token1 = www['capId']
