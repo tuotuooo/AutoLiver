@@ -276,8 +276,8 @@ function deypt(t) {
                     return y(o)
                 }
                 
-
-var xvalidate = "7jRs0RQq8QYD+10og2Y1GVjaMWXgPDiWwNQpOESYscB5Y8butz+twJc1M6URi7yZO9Y2Z5vyW6PjaH+mPXoxlPhonmoA40gZNZJjXL18hattl2D4lIlfwM9NggssS9xrZDneKaaLwW31o+bMH5ZK9EP2txfCgz/hMSw4UVDDgi0="
+const xvalidate = process.argv[2];
+// var xvalidate = "7jRs0RQq8QYD+10og2Y1GVjaMWXgPDiWwNQpOESYscB5Y8butz+twJc1M6URi7yZO9Y2Z5vyW6PjaH+mPXoxlPhonmoA40gZNZJjXL18hattl2D4lIlfwM9NggssS9xrZDneKaaLwW31o+bMH5ZK9EP2txfCgz/hMSw4UVDDgi0="
 
 var azoneid = "CN31"
 var R = hdefault(deypt(xvalidate + "::"))
