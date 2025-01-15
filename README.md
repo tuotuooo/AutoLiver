@@ -1,7 +1,7 @@
 > [!Important]
-> 🈲使用此项目进行违法违规活动。
+> 🈲使用此项目进行任何违法违规活动。
 > 
-> It is prohibited to use this project for illegal activities.
+> It is prohibited to use this project for any illegal activities.
 
 ## 🏪Introduction
 致"肝疼"的朋友🍻
