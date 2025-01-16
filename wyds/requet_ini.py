@@ -17,7 +17,7 @@ def requesturl(y):
         'Connection': 'keep-alive',
         'Content-Type': 'application/json',
         'Host': 'dl.reg.163.com',
-        'Referer': 'https://servicewechat.com/wx53eacbe0d8a7a95a/186/page-frame.html',
+        'Referer': 'https://servicewechat.com/wx53eacbe0d8a7a95a/188/page-frame.html',
         'Sec-Fetch-Dest': 'empty',
         'Sec-Fetch-Mode': 'cors',
         'Sec-Fetch-Site': 'cross-site',
