@@ -24,7 +24,7 @@ The user identity is authenticated using account + password or account + SMS ver
 ## BUG
 > `X-Rpc-Device_id`
 ```
-参数介绍：使用UUID作为值与用户的设备信息绑定
+参数介绍：使用UUID作为值与用户的设备信息绑定；影响1and2
 ```
 > 绕过方法：登录`https://user.mihoyo.com/#/login/captcha`关闭`在新设备登录时需短信验证`功能
 
