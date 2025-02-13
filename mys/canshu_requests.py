@@ -2,6 +2,7 @@ import requests
 import json
 import configparser
 
+
 def HQtokenAlogin_ticket(x,y):
     url = "https://passport-api.mihoyo.com/account/ma-cn-passport/app/loginByPassword"
     headers = {
