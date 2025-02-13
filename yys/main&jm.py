@@ -3,6 +3,7 @@ import hashlib
 import configparser
 import requests
 
+
 def generate_hmac_sha256(x,uid):
     ey = "d0d3a7342df2026a70f650b907800111"
     key = bytes(ey, 'utf-8')
