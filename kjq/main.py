@@ -1,6 +1,7 @@
 import subprocess
 import configparser
 
+
 def zs():
     gameId = config['zs']['gameid']
     serverId = config['zs']['serverid']
