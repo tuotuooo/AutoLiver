@@ -2,6 +2,7 @@ import requests
 import json
 import configparser
 
+
 def login(uni_web_token,cookie_token_v2,mid,uid,ltoken_v2,cookie_token,ltoken):
     url = 'https://hk4e-sdk.mihoyo.com/hk4e_cn/combo/granter/login/webLogin'
 
