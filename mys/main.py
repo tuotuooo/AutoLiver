@@ -1,6 +1,7 @@
 import subprocess
 import configparser
 
+
 def xqgd():
     arg1 = config['yx']['xqgd_uid']
     arg2 = config['yx']['xqgd-hdid']
