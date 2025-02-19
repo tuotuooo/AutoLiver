@@ -17,7 +17,7 @@ The user identity is authenticated using account + password or account + SMS ver
 ## Function
 - [x] 1. 米游社-游戏（原神、星穹轨道、崩坏3、未定事件薄、绝区零）-每日签到奖励
 - [x] 2. 云原神-游玩时长-每日签到奖励
-- [ ] 3. 云绝区零-游玩时长-每日签到奖励
+- [x] 3. 云绝区零-游玩时长-每日签到奖励
 - [x] 4. 库街区-游戏（鸣潮、战双帕弥什）-每日签到奖励
 - [ ] 5. 网易大神-游戏-每日签到奖励
       
