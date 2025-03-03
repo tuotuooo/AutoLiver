@@ -25,7 +25,7 @@ To friends with liver pain🍻
 绕过方法：登录`https://user.mihoyo.com/#/login/captcha`关闭`在新设备登录时需短信验证`功能
 
 ## Deployments
-> `yys` and `yjql`
+> `yys`
 
 ^(*￣(oo)￣)^：食用前请先查阅BUG
 
@@ -42,3 +42,19 @@ cnm.cfg：配置文件需要填写的参数介绍如下
 3. combo_token.py 发送参数1到服务器获取参数2
 4. main&jm.py 对参数2进行签名等处理再发送到服务器完成签到
 
+> `yjql`
+
+^(*￣(oo)￣)^：食用前请先查阅BUG
+
+cnm.cfg：配置文件需要填写的参数介绍如下
+
+|account|password|uid|
+| :----:  | :----:  | :----:  |
+|账号|密码|米游社的UID|
+
+脚本运行顺序如下，依次执行
+
+1. jm.py 用于加密账号和密码
+2. canshu_requests.py 发送加密后的账号密码获取参数1
+3. combo_token.py 对参数1进行签名等处理再发送到服务器获取参数2
+4. main&jm.py 对参数2进行签名等处理再发送到服务器完成签到
