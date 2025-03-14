@@ -13,10 +13,8 @@ from cryptography.hazmat.primitives.asymmetric import padding
 import configparser
 import binascii
 
-# 过极验第四代-滑块验证码
 
-
-# 获取发送滑块验证码所需的参数
+# 获取发送图标点选验证码所需的参数
 def erf():
     headers = {
         "Referer": "https://www.kurobbs.com/",
@@ -29,33 +27,35 @@ def erf():
     response = requests.get(url, headers=headers, params=params)
     data = response.text
     return data
-    
+
+
 # 筛选参数
 def split_string(data):
     length = len(data)
     middle = length // 2
-    first_half, second_half = data[:middle], data[middle+1:] if length % 2 else data[middle:]
+    first_half, second_half = data[:middle], data[middle + 1:] if length % 2 else data[middle:]
     lot_number_pattern = r'"lot_number":\s*"([^"]*)"'
     lot_number_match = re.search(lot_number_pattern, first_half)
     lot_number = lot_number_match.group(1) if lot_number_match else None
 
-    slice_image_pattern = r'"slice":\s*"([^"]*)"'
-    slice_image_match = re.search(slice_image_pattern, first_half)
-    slice_image = slice_image_match.group(1) if slice_image_match else None
-
-    bg_image_pattern = r'"bg":\s*"([^"]*)"'
-    bg_image_match = re.search(bg_image_pattern, first_half)
-    bg_image = bg_image_match.group(1) if bg_image_match else None
+    target_image_pattern = r'"imgs":\s*"([^"]*)"'
+    target_image_match = re.search(target_image_pattern, first_half)
+    target_image = target_image_match.group(1) if target_image_match else None
 
     payload_pattern = r'"payload":\s*"([^"]*)"'
-    payload_match = re.search(payload_pattern, second_half)
+    payload_match = re.search(payload_pattern, data)  # payload 处于两部分之间
     payload = payload_match.group(1) if payload_match else None
+
+    ques_list_pattern = r'"ques":\s*\[(.*?)\]'
+    ques_list_match = re.search(ques_list_pattern, data)
+    ques = ques_list_match.group(1).split(',') if ques_list_match else None
 
     process_token_pattern = r'"process_token":\s*"([^"]*)"'
     process_token_match = re.search(process_token_pattern, second_half)
     process_token = process_token_match.group(1) if process_token_match else None
 
-    return lot_number, slice_image, bg_image, payload, process_token
+    return lot_number, target_image, ques, payload, process_token
+
 
 # 生成随机数
 def generate_random_string():
@@ -65,7 +65,8 @@ def generate_random_string():
         hex_string = hex(random_number)[3:]
         randomStr += hex_string
     return randomStr
-    
+
+
 # 对生成的用户操作信息进行AES加密
 def aesooo(qq, ww, ee, rr, tt, yy, sjs):
     data = {
@@ -91,7 +92,7 @@ def aesooo(qq, ww, ee, rr, tt, yy, sjs):
             "sc": 0
         }
     }
-    plaintext =str(data).replace(" ", "").replace("'", '"')
+    plaintext = str(data).replace(" ", "").replace("'", '"')
     key = sjs.encode()
     iv = b'0000000000000000'
     cipher = AES.new(key, AES.MODE_CBC, iv)
@@ -99,8 +100,9 @@ def aesooo(qq, ww, ee, rr, tt, yy, sjs):
     ciphertext = cipher.encrypt(padded_data)
     return ciphertext.hex()
 
+
 # 生成用户操作信息
-async def huakuai(url1,url2):
+async def huakuai(url1, url2):
     def generate_distance(slice_url, bg_url):
         slide = DdddOcr(det=False, ocr=False, show_ad=False)
         slice_image = requests.get(slice_url).content
@@ -111,6 +113,7 @@ async def huakuai(url1,url2):
     def generate_track(distance):
         def __ease_out_expo(step):
             return 1 if step == 1 else 1 - pow(2, -10 * step)
+
         tracks = [[random.randint(20, 60), random.randint(10, 40), 0]]
         count = 30 + int(distance / 2)
         _x, _y = 0, 0
@@ -129,6 +132,7 @@ async def huakuai(url1,url2):
     tracks, total_time = generate_track(distance)
     return distance, total_time, distance / (0.8876 * 340 / 300)
 
+
 # RSA加密AES的密钥
 async def rsaooo(z):
     with open("1.pem", "rb") as key_file:
@@ -141,6 +145,7 @@ async def rsaooo(z):
     )
     hex_encoded = binascii.hexlify(ciphertext)
     return hex_encoded.decode('utf-8')
+
 
 # 生成pow_msg  作为AES加密的原始材料
 async def aes_time(x, u):
@@ -157,18 +162,20 @@ async def aes_time(x, u):
 
     return pow_msg, encrypted_string
 
+
 # 拼接参数 异步控制函数
 async def e(lot_number, slice_image, bg_image, captcha_id):
     url_a = 'https://static.geetest.com/'
     url_b = f'{url_a}{slice_image}'
     url_c = f'{url_a}{bg_image}'
     sjs = generate_random_string()
-    tuo = [huakuai(url_b,url_c), rsaooo(sjs), aes_time(lot_number, captcha_id)]
+    tuo = [huakuai(url_b, url_c), rsaooo(sjs), aes_time(lot_number, captcha_id)]
     nnn = await asyncio.gather(*tuo)
     x = aesooo(nnn[0][0], nnn[0][1], nnn[0][2], lot_number, nnn[2][0], nnn[2][1], sjs)
     y = nnn[1]
     wer = x + y
     return wer
+
 
 # 发送滑块验证码验证请求
 def veve(vc, vx, vm):
@@ -187,26 +194,28 @@ def veve(vc, vx, vm):
     data = response.text
     return data
 
+
 # 筛选参数
 def veve_d(data):
     length = len(data)
     middle = length // 2
-    first_half, second_half = data[:middle], data[middle+1:] if length % 2 else data[middle:]
+    first_half, second_half = data[:middle], data[middle + 1:] if length % 2 else data[middle:]
     captcha_output_pattern = r'"captcha_output":\s*"([^"]*)"'
     captcha_output_match = re.search(captcha_output_pattern, first_half)
     captcha_output = captcha_output_match.group(1) if captcha_output_match else None
 
-    first_half, second_half = data[:middle], data[middle+1:] if length % 2 else data[middle:]
+    first_half, second_half = data[:middle], data[middle + 1:] if length % 2 else data[middle:]
     gen_time_pattern = r'"gen_time":\s*"([^"]*)"'
     gen_time_match = re.search(gen_time_pattern, first_half)
     gen_time = gen_time_match.group(1) if gen_time_match else None
 
-    first_half, second_half = data[:middle], data[middle+1:] if length % 2 else data[middle:]
+    first_half, second_half = data[:middle], data[middle + 1:] if length % 2 else data[middle:]
     pass_token_pattern = r'"pass_token":\s*"([^"]*)"'
     pass_token_match = re.search(pass_token_pattern, first_half)
     pass_token = pass_token_match.group(1) if pass_token_match else None
 
     return captcha_output, gen_time, pass_token
+
 
 # 发送登录请求
 def last(phone, captcha_id, captcha_output, lot_number, gen_time, pass_token):
@@ -238,13 +247,14 @@ def last(phone, captcha_id, captcha_output, lot_number, gen_time, pass_token):
             'gen_time': gen_time,
             'pass_token': pass_token
         })
-        }
+    }
     response = requests.post(url, headers=headers, data=data)
     return print(f"{response.text}")
 
+
 def main():
     config = configparser.ConfigParser()
-    config.read('kjq.cfg',encoding='utf-8')
+    config.read('kjq.cfg', encoding='utf-8')
     captcha_id = config['captcha']['captcha_id']
     phone = config['user']['phone']
     x = erf()
@@ -253,6 +263,7 @@ def main():
     dd = veve(captcha_id, y[0], csc)
     cxv = veve_d(dd)
     last(phone, captcha_id, cxv[0], y[0], cxv[1], cxv[2])
-  
+
+
 if __name__ == '__main__':
     main()
