@@ -14,7 +14,7 @@ To friends with liver pain🍻
 - [x] 1. 米游社-游戏（原神、星穹轨道、崩坏3、未定事件薄、绝区零）-每日签到奖励
 - [x] 2. 云原神-游玩时长-每日签到奖励
 - [x] 3. 云绝区零-游玩时长-每日签到奖励
-- [x] 4. ~~库街区-游戏（鸣潮、战双帕弥什）-每日签到奖励~~ 登录异常，详情见issue: [#12](https://github.com/tuotuooo/AutoLiver/issues/12)
+- [x] 4. ~~库街区-游戏（鸣潮、战双帕弥什）-每日签到奖励~~ 登录异常，详情见issue: [#12](https://github.com/tuotuooo/AutoLiver/issues/12)，需要人工模拟 dxyzm.py [详见](#kjq)
 - [ ] 5. 网易大神-游戏-每日签到奖励
       
 ## BUG
@@ -77,7 +77,9 @@ kjq.cfg：配置文件需要填写的参数介绍如下
 
 脚本运行顺序如下，依次执行
 
-1. dxyzm.py 用于获取短信验证码，填入kjq.cfg
+~~1. dxyzm.py 用于获取短信验证码，填入kjq.cfg~~
+1. 临时解决方案：在[库街区](https://www.kurobbs.com/mc/home/9)点击登录库街区账号，输入手机号获取短信验证码，将参数`phone`和`code` 填入kjq.cfg
+   - 注意不要在网页上登录了，该步骤只是为了模拟 dxyzm.py 来获取短信验证码
 2. phone_login.py 获取token
 3. main.py 控制签到，默认发送战双和鸣潮的签到请求；若不需要同时签到所有，可以注释掉对应的函数
 
