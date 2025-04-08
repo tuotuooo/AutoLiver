@@ -32,30 +32,19 @@ def erf():
     
 # 筛选参数
 def split_string(data):
-    length = len(data)
-    middle = length // 2
-    first_half, second_half = data[:middle], data[middle+1:] if length % 2 else data[middle:]
-    lot_number_pattern = r'"lot_number":\s*"([^"]*)"'
-    lot_number_match = re.search(lot_number_pattern, first_half)
-    lot_number = lot_number_match.group(1) if lot_number_match else None
-
-    slice_image_pattern = r'"slice":\s*"([^"]*)"'
-    slice_image_match = re.search(slice_image_pattern, first_half)
-    slice_image = slice_image_match.group(1) if slice_image_match else None
-
-    bg_image_pattern = r'"bg":\s*"([^"]*)"'
-    bg_image_match = re.search(bg_image_pattern, first_half)
-    bg_image = bg_image_match.group(1) if bg_image_match else None
-
-    payload_pattern = r'"payload":\s*"([^"]*)"'
-    payload_match = re.search(payload_pattern, second_half)
-    payload = payload_match.group(1) if payload_match else None
-
-    process_token_pattern = r'"process_token":\s*"([^"]*)"'
-    process_token_match = re.search(process_token_pattern, second_half)
-    process_token = process_token_match.group(1) if process_token_match else None
-
-    return lot_number, slice_image, bg_image, payload, process_token
+    data = re.sub(r'[()]', '', data)
+    data_dict = json.loads(data)
+    lot_number = data_dict.get("data", {}).get("lot_number")
+    # print(lot_number)
+    payload = data_dict.get("data", {}).get("payload")
+    # print(payload)
+    process_token = data_dict.get("data", {}).get("process_token")
+    # print(process_token)
+    ques = data_dict.get("data", {}).get("ques")
+    # print(ques)
+    imgs = data_dict.get("data", {}).get("imgs")
+    # print(imgs)
+    return lot_number, ques, imgs, payload, process_token
 
 # 生成随机数
 def generate_random_string():
