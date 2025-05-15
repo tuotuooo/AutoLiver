@@ -10,6 +10,12 @@ To friends with liver pain🍻
 
 `(,,´•ω•)ノ"(´っω•｀。)`
 
+逆向难度
+- [x] web
+- [x] 小程序
+- [ ] app
+- [ ] 系统
+
 ## Function
 > [!Note]
 > 库街区登录异常需要人工模拟 dxyzm.py [详见](#kjq)
